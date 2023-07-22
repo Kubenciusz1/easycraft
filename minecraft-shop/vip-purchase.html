@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zakup rangi VIP</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-image: url('https://wallpaperaccess.com/full/37440.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .purchase-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      display: block;
+      margin: 20px auto;
+    }
+
+    .tipply-info {
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    /* Dodatkowy styl dla napisu "powrót" */
+    .return-link {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      font-family: Arial Black, Arial, sans-serif;
+      font-size: 22px;
+      color: #de070e; /* Czerwony kolor */
+      font-weight: bold; /* Pogrubienie czcionki */
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="http://127.0.0.1:5500/index.html" class="return-link">Powrót</a> <!-- Dodany link do powrotu -->
+
+    <h1>Zakup rangi VIP</h1>
+    <p>Ranga VIP daje Ci dostęp do ekskluzywnych funkcji na naszym serwerze Minecraft!</p>
+    
+    <h2>Ranga VIP na zawsze - 20 zł</h2>
+    <p>Zyskaj dostęp do rangi VIP na zawsze za jedyne 20 zł.</p>
+    <p>Po kliknięciu w przycisk zostaniesz przeniesiony na stronę tipply. Napisz w wiadomości jaką chcesz dostać rangę i napisz twój nick z minecraft, wpisz odpowiednią kwotę.</p>
+    <button class="purchase-button" onclick="redirectToVIPPageForever()">Kup rangę VIP na zawsze</button>
+
+    <h2>Ranga VIP na 40 dni - 10 zł</h2>
+    <p>Zyskaj dostęp do rangi VIP na 40 dni za jedyne 10 zł.</p>
+    <p>Po kliknięciu w przycisk zostaniesz przeniesiony na stronę tipply. Napisz w wiadomości jaką chcesz dostać rangę i napisz twój nick z minecraft, wpisz odpowiednią kwotę.</p>
+    <button class="purchase-button" onclick="redirectToVIPPage40Days()">Kup rangę VIP na 40 dni</button>
+  </div>
+
+  <script>
+    function redirectToVIPPageForever() {
+      window.location.href = "https://tipply.pl/u/EasyCraftZakup";
+    }
+
+    function redirectToVIPPage40Days() {
+      window.location.href = "https://tipply.pl/u/EasyCraftZakup";
+    }
+  </script>
+</body>
+</html>

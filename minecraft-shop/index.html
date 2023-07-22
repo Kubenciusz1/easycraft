@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyCraft</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #333;
+      background-image: url('https://wallpaperaccess.com/full/37440.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .ranks-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .rank {
+      text-align: center;
+      margin: 10px;
+    }
+
+    .rank-name {
+      font-size: 24px;
+    }
+
+    .purchase-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .discord-icon {
+      width: 59px;
+      height: 59px;
+      background-color: #7289DA;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .discord-text {
+      font-family: 'Arial Black', Arial, sans-serif;
+      font-size: 14px;
+      color: white;
+    }
+
+    /* Dodaj nowe style dla przycisku SVIP */
+    .svip-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Dodaj nowe style dla przycisku MVIP */
+    .mvip-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Dodaj nowe style dla przycisku ELITA */
+    .elita-button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    /* Dodaj style dla prostokąta Administracja */
+    .admin-rectangle {
+      background-color: #de070e;
+      color: #fff;
+      border-radius: 8px;
+      padding: 8px 15px;
+      cursor: pointer;
+      font-family: 'Arial Black', Arial, sans-serif;
+      margin: 10px;
+      text-align: center;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+    }
+
+    /* Style dla menu zakupu */
+    .menu-icon {
+      width: 40px;
+      height: 40px;
+      background-color: black; /* Zmiana koloru na czarny */
+      color: white; /* Zmiana koloru na biały */
+      font-size: 24px; /* Pogrubienie znaku */
+      font-weight: bold; /* Pogrubienie znaku */
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 2;
+    }
+
+    .menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 20%;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .menu.active {
+      transform: translateX(0);
+    }
+
+    .menu-item {
+      font-size: 24px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    /* Dodatkowy styl, aby zablokować okienko Google Translate */
+    body:not(.translate-loaded) .skiptranslate {
+      display: none !important;
+    }
+
+    /* Dodaj nowy styl dla menu po kliknięciu na ikonkę */
+    .menu-closing {
+      animation: closeMenuAnimation 0.3s ease-in-out;
+    }
+
+    @keyframes closeMenuAnimation {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="discord-icon">
+    <a href="https://dsc.gg/easycraft" target="_blank" class="discord-text">
+      Discord
+    </a>
+  </div>
+
+  <!-- Dodaj menu zakupu -->
+  <div class="menu-icon" onclick="toggleMenu()">
+    ⁝
+  </div>
+
+  <div class="menu" id="menu" onclick="closeMenu(event)">
+    <div class="menu-item" onclick="redirectToRangiPage()">Rangi</div>
+    <div class="menu-item" onclick="redirectToWkrotcePage()">Wkrótce</div>
+  </div>
+  <!-- Koniec menu zakupu -->
+
+  <div class="container">
+    <h1>EasyCraft</h1>
+
+    <div class="ranks-container">
+      <!-- Ranga VIP -->
+      <div class="rank">
+        <span class="rank-name">VIP</span>
+        <br>
+        <a href="vip-purchase.html">
+          <button class="purchase-button">Kup rangę</button>
+        </a>
+      </div>
+
+      <!-- Ranga SVIP -->
+      <div class="rank">
+        <span class="rank-name">SVIP</span>
+        <br>
+        <button class="svip-button" onclick="redirectToSVIPPage()">Kup teraz</button>
+      </div>
+
+      <!-- Ranga MVIP -->
+      <div class="rank">
+        <span class="rank-name">MVIP</span>
+        <br>
+        <button class="mvip-button" onclick="redirectToMVIPPage()">Kup teraz</button>
+      </div>
+
+      <!-- Ranga ELITA -->
+      <div class="rank">
+        <span class="rank-name">ELITA</span>
+        <br>
+        <button class="elita-button" onclick="redirectToELITAPage()">Kup teraz</button>
+      </div>
+
+      <!-- Ranga LEGENDA -->
+      <div class="rank">
+        <span class="rank-name">LEGENDA</span>
+        <br>
+        <button class="purchase-button">Kup teraz</button>
+      </div>
+    </div>
+    <!-- Prostokąt Administracja -->
+    <div class="admin-rectangle" onclick="redirectToAdminPage()">
+      Administracja
+    </div>
+  </div>
+
+  <script>
+    // Dodaj funkcję do przycisku SVIP, aby przenosił na stronę zakupu SVIP
+    function redirectToSVIPPage() {
+      window.location.href = "http://127.0.0.1:5500/svip-kupno.html";
+    }
+
+    // Dodaj funkcję do przycisku MVIP, aby przenosił na stronę zakupu MVIP
+    function redirectToMVIPPage() {
+      window.location.href = "http://127.0.0.1:5500/mvip-kupno.html";
+    }
+
+    // Dodaj funkcję do przycisku ELITA, aby przenosił na stronę zakupu ELITA
+    function redirectToELITAPage() {
+      window.location.href = "http://127.0.0.1:5500/elita-kupno.html";
+    }
+
+    // Dodaj funkcję do przycisku Rangi, aby przenosił na stronę zakupu Rangi (tutaj podaj odpowiedni adres URL)
+    function redirectToRangiPage() {
+      window.location.href = "http://127.0.0.1:5500/index.html";
+    }
+
+    // Dodaj funkcję do przycisku Wkrótce, aby wykonać odpowiednią akcję (np. nic się nie stanie) (tutaj podaj odpowiedni adres URL)
+    function redirectToWkrotcePage() {
+      // Tutaj możesz dodać odpowiednią akcję, np. nic się nie stanie (używam "#" jako przykład).
+      // Jeśli chcesz dodać coś innego, podaj odpowiedni adres URL strony "wkrótce".
+    }
+
+    // Dodaj funkcję do prostokąta Administracja
+    function redirectToAdminPage() {
+      window.location.href = "http://127.0.0.1:5500/administracja.html";
+    }
+
+    // Dodaj funkcję do menu zakupu, aby rozkładać/ukrywać menu
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+
+    // Dodaj funkcję do zamknięcia menu po kliknięciu poza nim
+    function closeMenu(event) {
+      const menu = document.getElementById("menu");
+      if (!menu.contains(event.target) && menu.classList.contains("active")) {
+        menu.classList.add("menu-closing");
+        setTimeout(function() {
+          menu.classList.remove("active", "menu-closing");
+        }, 300); // Czas animacji w milisekundach (tutaj 0.3s czyli 300ms)
+      }
+    }
+
+    // Zablokuj okienko Google Translate
+    document.body.classList.add("translate-loaded");
+  </script>
+</body>
+</html>
